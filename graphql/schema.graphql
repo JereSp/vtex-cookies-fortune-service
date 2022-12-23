@@ -1,8 +1,9 @@
 type Query {
     searchCookie: [Cookie]
+    searchRandomCookie: Cookie
 }
 
-type Mutation{
-    addCookie(text: String!) : Boolean
+type Mutation {
+    addCookie(text: String!): Boolean
     deleteCookie(id: String!): Boolean
 }

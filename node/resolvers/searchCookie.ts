@@ -3,9 +3,12 @@ export const searchCookie = async (
     __: any,
     { clients: { masterdata } }: Context
 ) =>
-    masterdata
-        .scrollDocuments({
-            dataEntity: "JS",
-            fields: ["text", "id"],
-        })
-        .then(({ data }) => data);
+    masterdata.searchDocuments({
+        dataEntity: "JS",
+        fields: ["text", "id"],
+        pagination: {
+            page: 1,
+            pageSize: 99,
+        },
+    });
+// .then(({ data:any }) => data);
